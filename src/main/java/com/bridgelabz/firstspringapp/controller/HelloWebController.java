@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 /**
- * Purpose : To Create RestController to print hello message.
+ * Purpose : Create controller to print message.
  * @author : DAMINI CHANDRAKAR
  * @since  : 01-12-2021
  */
