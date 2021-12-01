@@ -1,5 +1,6 @@
 package com.bridgelabz.firstspringapp.controller;
 
+import com.bridgelabz.firstspringapp.dto.UserDto;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,5 +31,10 @@ public class HelloRestController {
     @GetMapping("/hello/{name}")
     public String getMessageAsPatheVariable(@PathVariable(name = "name") String name) {
         return "Hello " + name;
+    }
+
+    @PostMapping("/hello3")
+    public String getMessageAsPatheVariable(@RequestBody UserDto userDto) {
+        return userDto.toString();
     }
 }
