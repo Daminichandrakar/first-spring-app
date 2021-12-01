@@ -1,10 +1,7 @@
 package com.bridgelabz.firstspringapp.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Purpose : Create RestController to print message.
@@ -26,7 +23,12 @@ public class HelloRestController {
     }
 
     @GetMapping("/hello/query")
-    public String getMessage(@RequestParam String name) {
+    public String getMessageAsQueryParameter(@RequestParam String name) {
         return name;
+    }
+
+    @GetMapping("/hello/{name}")
+    public String getMessageAsPatheVariable(@PathVariable(name = "name") String name) {
+        return "Hello " + name;
     }
 }
