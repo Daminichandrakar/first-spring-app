@@ -24,4 +24,9 @@ public class HelloRestController {
     public String getMessage() {
         return "Hello From Bridgelabz......";
     }
+
+    @GetMapping("/hello/query")
+    public String getMessage(@RequestParam String name) {
+        return name;
+    }
 }
