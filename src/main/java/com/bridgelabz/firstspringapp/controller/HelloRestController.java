@@ -24,17 +24,30 @@ public class HelloRestController {
     }
 
     @GetMapping("/hello/query")
-    public String getMessageAsQueryParameter(@RequestParam String name) {
+    public String getMessageAsQueryParameter(
+            @RequestParam String name) {
         return name;
     }
 
     @GetMapping("/hello/{name}")
-    public String getMessageAsPatheVariable(@PathVariable(name = "name") String name) {
+    public String getMessageAsPatheVariable(
+            @PathVariable(name = "name") String name) {
         return "Hello " + name;
     }
 
     @PostMapping("/hello3")
-    public String getMessageAsPatheVariable(@RequestBody UserDto userDto) {
+    public String getUserDto(
+            @RequestBody UserDto userDto) {
         return userDto.toString();
     }
+
+    @PutMapping("/hello4/{firstName}")
+    public String getMessageUsingPutRequest(
+            @PathVariable(name = "firstName") String firstName,
+            @RequestParam String lastName
+    ) {
+        return "Hello " + firstName + " " + lastName ;
+    }
+
+
 }
